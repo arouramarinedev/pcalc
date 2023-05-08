@@ -1,0 +1,38 @@
+body {
+  font-size:100%;
+  /*font-family: 'Open Sans', sans-serif;*/
+  font-family: Calibri, Arial, sans-serif;
+  background: white;
+  background-size:cover;
+  max-width:900px;
+  margin:0 auto;
+  height: 100%;
+  background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+  .calculator {
+    /*max-width:900px;*/
+    height: auto;
+    min-height: 1194px;
+    box-shadow: 0 1px 17px 0 rgba(0, 0, 0, 0.50);
+    margin:0 auto;
+    border-bottom: 2px solid #4787ed;
+    margin-top: 60px;
+    /* background-color: #f8fcff; */
+  }
+
+  * {
+    margin:0;
+    padding:0;
+  }
+  
+  html {
+      height: 100%;
+  }
+
+  .sblue{
+    color: #0070c0;
+  }
+
+ 

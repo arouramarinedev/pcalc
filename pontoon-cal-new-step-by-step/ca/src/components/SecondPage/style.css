@@ -1,0 +1,8 @@
+.check-marks {
+    list-style: none;
+  }
+  
+.check-marks li:before {
+    content: '✓  ';
+  }
+
