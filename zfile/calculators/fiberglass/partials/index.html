@@ -1,0 +1,269 @@
+<div class="calculator clearfix">
+    <div class="calculator--container">
+        <img src="https://www.auroramarine.com/calculator/img/aurora-logo-transparent.png" alt="Aurora Marine Logo" width="60" height="60"/>
+        <h1>Aurora Marine</h1>
+        <h3 class="subtitle">
+            Measure the parts of your boat that you will be working on and enter below, than press calculate. The app will automatically calculate the ft.&sup2; or m&sup2; and the
+            amount of product you will need to complete your job.
+        </h3>
+        <div class="bp">
+            <div class="calculation-options">
+                <strong class="options-label">Select:</strong>
+                <div class="calculator-option">Imperial <input ng-change="updateFields(calculator.measure)" ng-checked="true" ng-model="calculator.measure" type="radio" name="mesure" value="imperial"/></div>
+                <div class="calculator-option">Metric <input ng-change="updateFields(calculator.measure)" ng-model="calculator.measure" type="radio" name="mesure" value="metric"/></div>
+            </div>
+            <section class="calculator-section deck-area">
+                <img src="img/fiberglass-1.png" class="calculator-section-image" alt=""/>
+                <div class="calculator-section-content">
+                    <span class="displayDeckErrors"></span>
+                    <span class="section-content-label">Deck</span>
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td width="20%">Length</td>
+                            <td width="40%"><input ng-model="calculator.form.deck.length" type="text" min="0" required="required" class="inch" name="deckLength" ng-required="required" placeholder="{{ calculator.measuremeta.round }}" /></td>
+                        </tr>
+                        <tr>
+                            <td width="20%">Width</td>
+                            <td width="40%"><input ng-model="calculator.form.deck.width" type="text" min="0" required="required" class="feet" name="deckWidth" ng-required="required" placeholder="{{ calculator.measuremeta.round }}" /></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="calculator-section gunnel-area">
+                <img src="img/fiberglass-2.png" class="calculator-section-image" alt=""/>
+                <div class="calculator-section-content">
+                    <span class="displayDeckErrors"></span>
+                    <span class="section-content-label">Gun wales(Gunnel)</span>
+                    <table>
+                        <thead>
+                            <th></th>
+                            <th>Port</th>
+                            <th>Startboard</th>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td width="20%">Length</td>
+                            <td width="40%"><input ng-model="calculator.form.gunnel.port.length" type="text" min="0" required="required" class="inch" name="gunnelPortLength" ng-required="required" placeholder="{{ calculator.measuremeta.round }}" /></td>
+                            <td width="40%"><input ng-model="calculator.form.gunnel.starboard.length" type="text" min="0" required="required" class="inch" name="gunnelStartboardLength" ng-required="required" placeholder="{{ calculator.measuremeta.round }}" /></td>
+                        </tr>
+                        <tr>
+                            <td width="20%">Width</td>
+                            <td width="40%"><input ng-model="calculator.form.gunnel.port.width" type="text" min="0" required="required" class="feet" name="gunnelPortWidth" ng-required="required" placeholder="{{ calculator.measuremeta.round }}" /></td>                            
+                            <td width="40%"><input ng-model="calculator.form.gunnel.starboard.width" type="text" min="0" required="required" class="inch" name="gunnelStartboardWidth" ng-required="required" placeholder="{{ calculator.measuremeta.round }}" /></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <table>
+                        <thead>
+                            <th></th>
+                            <th>Stern</th>
+                            <th></th>
+                        </thead>
+                        <tbody>
+                        <tbody>
+                        <tr>
+                            <td width="20%">Length</td>
+                            <td width="40%"><input ng-model="calculator.form.gunnel.stern.length" type="text" min="0" required="required" class="inch" name="pontoonRadius1" ng-required="required" placeholder="{{ calculator.measuremeta.round }}" /></td>
+                        </tr>
+                        <tr>
+                            <td width="5%">Width</td>
+                            <td width="40%"><input ng-model="calculator.form.gunnel.stern.width" type="text" min="0" required="required" class="feet" name="pontoonLength1" ng-required="required" placeholder="{{ calculator.measuremeta.round }}" /></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="calculator-section superstructure-area">
+                <img src="img/fiberglass-3.png" class="calculator-section-image" alt=""/>
+                <div class="calculator-section-content">
+                    <span class="displayDeckErrors"></span>
+                    <span class="section-content-label">Super Structure</span>
+                    <table>
+                        <thead>
+                            <th></th>
+                            <th>Port</th>
+                            <th>Startboard</th>
+                        </thead>
+                        <tbody>
+                        <tbody>
+                        <tr>
+                            <td width="20%">Length</td>
+                            <td width="40%"><input ng-model="calculator.form.superstructure.port.length" type="text" min="0" required="required" class="inch" name="pontoonRadius1" ng-required="required" placeholder="{{ calculator.measuremeta.round }}" /></td>
+                            <td width="40%"><input ng-model="calculator.form.superstructure.starboard.length" type="text" min="0" required="required" class="inch" name="pontoonRadius1" ng-required="required" placeholder="{{ calculator.measuremeta.round }}" /></td>
+                        </tr>
+                        <tr>
+                            <td width="5%">Width</td>
+                            <td width="40%"><input ng-model="calculator.form.superstructure.port.width" type="text" min="0" required="required" class="feet" name="pontoonLength1" ng-required="required" placeholder="{{ calculator.measuremeta.round }}" /></td>
+                            <td width="40%"><input ng-model="calculator.form.superstructure.starboard.width" type="text" min="0" required="required" class="feet" name="pontoonLength1" ng-required="required" placeholder="{{ calculator.measuremeta.round }}" /></td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <table>
+                        <thead>
+                            <th></th>
+                            <th>Front</th>
+                            <th>Rear</th>
+                        </thead>
+                        <tbody>
+                        <tbody>
+                        <tr>
+                            <td width="20%">Height</td>
+                            <td width="40%"><input ng-model="calculator.form.superstructure.front.height" type="text" min="0" required="required" class="inch" name="pontoonRadius1" ng-required="required" placeholder="{{ calculator.measuremeta.round }}" /></td>
+                            <td width="40%"><input ng-model="calculator.form.superstructure.rear.height" type="text" min="0" required="required" class="inch" name="pontoonRadius1" ng-required="required" placeholder="{{ calculator.measuremeta.round }}" /></td>
+                        </tr>
+                        <tr>
+                            <td width="5%">Width</td>
+                            <td width="40%"><input ng-model="calculator.form.superstructure.front.width" type="text" min="0" required="required" class="feet" name="pontoonLength1" ng-required="required" placeholder="{{ calculator.measuremeta.round }}" /></td>
+                            <td width="40%"><input ng-model="calculator.form.superstructure.rear.width" type="text" min="0" required="required" class="feet" name="pontoonLength1" ng-required="required" placeholder="{{ calculator.measuremeta.round }}" /></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    
+                </div>
+            </section>
+            <section class="calculator-section freeboard-area">
+                <img src="img/fiberglass-4.png" class="calculator-section-image" alt=""/>
+                <div class="calculator-section-content">
+                    <span class="displayDeckErrors"></span>
+                    <span class="section-content-label">Free Board</span>
+                    
+                    <table>
+                        <thead>
+                            <th></th>
+                            <th>Topside</th>
+                            <th></th>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td width="20%">Length</td>
+                            <td width="40%"><input ng-model="calculator.form.freeboard.topside.length" type="text" min="0" required="required" class="inch" name="pontoonRadius1" ng-required="required" placeholder="{{ calculator.measuremeta.round }}" /></td>
+                            <td width="40%"></td>
+                        </tr>
+                        <tr>
+                            <td width="20%">Width</td>
+                            <td width="40%"><input ng-model="calculator.form.board.topside.width" type="text" min="0" required="required" class="feet" name="pontoonLength1" ng-required="required" placeholder="{{ calculator.measuremeta.round }}" /></td>
+                            <td width="40%"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <table>
+                        <thead>
+                            <th></th>
+                            <th>Transom</th>
+                            <th></th>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td width="20%">Height</td>
+                            <td width="40%"><input ng-model="calculator.form.freeboard.transom.height" type="text" min="0" required="required" class="feet" name="pontoonLength1" ng-required="required" placeholder="{{ calculator.measuremeta.round }}" /></td>
+                            <td width="40%"></td>
+                        </tr>
+                        <tr>
+                            <td width="20%">Width</td>
+                            <td width="40%"><input ng-model="calculator.form.freeboard.transom.width" type="text" min="0" required="required" class="feet" name="pontoonLength1" ng-required="required" placeholder="{{ calculator.measuremeta.round }}" /></td>
+                            <td width="40%"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="calculator-section hull-area">
+                <img src="img/fiberglass-5.png" class="calculator-section-image" alt=""/>
+                <div class="calculator-section-content">
+                    <span class="displayDeckErrors"></span>
+                    <span class="section-content-label">Bottom</span>
+                    <table>
+                        <thead>
+                            <th></th>
+                            <th>Bottom</th>
+                            <th></th>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td width="20%">Length</td>
+                            <td width="40%"><input ng-model="calculator.form.hullbottom.bottomside.length" type="text" min="0" required="required" class="inch" name="pontoonRadius1" ng-required="required" placeholder="{{ calculator.measuremeta.round }}" /></td>
+                            <td width="40%"></td>
+                        </tr>
+                        <tr>
+                            <td width="20%">Width</td>
+                            <td width="40%"><input ng-model="calculator.form.hullbottom.bottomside.width" type="text" min="0" required="required" class="feet" name="pontoonLength1" ng-required="required" placeholder="{{ calculator.measuremeta.round }}" /></td>
+                            <td width="40%"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <table>
+                        <thead>
+                            <th></th>
+                            <th>Transom</th>
+                            <th></th>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td width="20%">Height</td>
+                            <td width="40%"><input ng-model="calculator.form.hullbottom.transom.height" type="text" min="0" required="required" class="feet" name="pontoonLength1" ng-required="required" placeholder="{{ calculator.measuremeta.round }}" /></td>
+                            <td width="40%"></td>
+                        </tr>
+                        <tr>
+                            <td width="20%">Width</td>
+                            <td width="40%"><input ng-model="calculator.form.hullbottom.transom.width" type="text" min="0" required="required" class="feet" name="pontoonLength1" ng-required="required" placeholder="{{ calculator.measuremeta.round }}" /></td>
+                            <td width="40%"></td>
+                        </tr>
+                        </tbody>
+                    </table>                </div>
+            </section>
+
+            <section class="calculator-section other-area">
+                <img src="img/fiberglass-5.png" class="calculator-section-image" alt=""/>
+                <div class="calculator-section-content">
+                    <span class="displayDeckErrors"></span>
+                    <span class="section-content-label">Other</span>
+                    <table>
+                        <thead>
+                            <th></th>
+                            <th>Other (1)</th>
+                            <th>Other (2)</th>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td width="20%">Length</td>
+                            <td width="40%"><input ng-model="calculator.form.other.other1.length" type="text" min="0" required="required" class="inch" name="pontoonRadius1" placeholder="{{ calculator.measuremeta.round }}" /></td>
+                            <td width="40%"><input ng-model="calculator.form.other.other2.length" type="text" min="0" required="required" class="inch" name="pontoonRadius1" placeholder="{{ calculator.measuremeta.round }}" /></td>
+                        </tr>
+                        <tr>
+                            <td width="20%">Width</td>
+                            <td width="40%"><input ng-model="calculator.form.other.other1.width" type="text" min="0" required="required" class="feet" name="pontoonLength1" placeholder="{{ calculator.measuremeta.round }}" /></td>
+                            <td width="40%"><input ng-model="calculator.form.other.other2.width" type="text" min="0" required="required" class="feet" name="pontoonLength1" placeholder="{{ calculator.measuremeta.round }}" /></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <table>
+                        <thead>
+                            <th></th>
+                            <th>Other (3)</th>
+                            <th></th>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td width="20%">Length</td>
+                            <td width="40%"><input ng-model="calculator.form.other.other3.length" type="text" min="0" required="required" class="feet" name="pontoonLength1" placeholder="{{ calculator.measuremeta.round }}" /></td>
+                            <td width="40%"></td>
+                        </tr>
+                        <tr>
+                            <td width="20%">Width</td>
+                            <td width="40%"><input ng-model="calculator.form.other.other3.width" type="text" min="0" required="required" class="feet" name="pontoonLength1" placeholder="{{ calculator.measuremeta.round }}" /></td>
+                            <td width="40%"></td>
+                        </tr>
+                        </tbody>
+                    </table>                
+                </div>
+            </section>
+
+
+            <button name="calculate" class="calculate blue-background" ng-click="calculateProducts()">Calculate</button>
+        </div>
+    </div>
+</div>

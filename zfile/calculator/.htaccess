@@ -1,0 +1,2 @@
+RewriteEngine on
+RewriteRule calculator/index\.html calculator/pontoons/index\.html$1

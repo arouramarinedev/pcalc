@@ -1,0 +1,302 @@
+<script type="text/ng-template" id="calculator.html"></script>
+
+<div class="calculator">
+	<form name="calculatorForm" ng-submit="calculateApplicationArea(calculatorForm)" novalidate>
+
+	<!-- Lead text content -->
+	<div class="row calculator-lead">
+		<img src="img/aurora-logo.png">
+		<h1 class="calculator-lead__heading">Aurora Marine</h1>
+		<p class="calculator-lead__para">
+			Measure the parts of your boat that you will be working on and enter below, than press calculate. The app will automatically calculate the ft.<sup>2</sup> or m<sup>2</sup> and the amount of product you will need to complete your job.
+		</p>
+	</div>
+
+	<!-- Unit of measure selector -->
+	<div class="row calculator-units">
+		<strong>Select unit of measurement:</strong>
+
+		<input type="radio" name="calculator-unit" id="imperial" ng-change="updateCalculatorUnit(calculatorUnit)" ng-model="calculatorUnit" value="ft" ng-checked="true">
+		<label for="imperial">( ft.<sup>2</sup> )</label>
+
+		<input type="radio" name="calculator-unit" id="metric" ng-change="updateCalculatorUnit(calculatorUnit)" ng-model="calculatorUnit" value="m">
+		<label for="metric">( m<sup>2</sup> )</label>
+	</div>
+
+	<div class="row calculator-form">
+
+		<!-- Deck -->
+		<div class="calculator-section deck">
+
+			<div class="calculator-section-left">
+				<img src="img/deck-section.png">
+			</div>
+
+			<div class="calculator-section-right">
+				<h3>Deck</h3>
+				
+				<table>
+					<tr>
+						<td><label>Length</label></td>
+						<td><input required autocomplete="off" type="number" name="deck-length" id="deck-length" ng-model="boat.deck.length"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><label>Width</label></td>
+						<td><input required autocomplete="off" type="number" name="deck-width" id="deck-width" ng-model="boat.deck.width"></td>
+						<td></td>
+					</tr>
+				</table>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+
+		<!-- Gunnel -->
+		<div class="calculator-section gunnel">
+
+			<div class="calculator-section-left">
+				<img src="img/gunnel-section.png">
+			</div>
+
+			<div class="calculator-section-right">
+				<h3>Gun wales(Gunnel)</h3>
+				
+				<table>
+					<tr>
+						<th></th>
+						<th>Port</th>
+						<th>Starboard</th>
+					</tr>
+					<tr>
+						<td><label>Length</label></td>
+						<td><input required autocomplete="off" type="number" name="gunnel-port-length" id="gunnel-port-length" ng-model="boat.gunnel.port.length"></td>
+						<td><input required autocomplete="off" type="number" name="gunnel-starboard-length" id="gunnel-starboard-length" ng-model="boat.gunnel.starboard.length"></td>
+					</tr>
+					<tr>
+						<td><label>Width</label></td>
+						<td><input required autocomplete="off" type="number" name="gunnel-port-width" id="gunnel-port-width" ng-model="boat.gunnel.port.width"></td>
+						<td><input required autocomplete="off" type="number" name="gunnel-starboard-width" id="gunnel-starboard-width" ng-model="boat.gunnel.starboard.width"></td>
+					</tr>
+				</table>
+				
+				<table>
+					<tr>
+						<th></th>
+						<th>Stern</th>
+						<th></th>
+					</tr>
+					<tr>
+						<td><label for="gunnel-stern-length">Length</label></td>
+						<td><input required autocomplete="off" type="number" name="gunnel-stern-length" id="gunnel-stern-length" ng-model="boat.gunnel.stern.length"></td>
+					</tr>
+					<tr>
+						<td><label for="gunnel-stern-width">Width</label></td>
+						<td><input required autocomplete="off" type="number" name="gunnel-stern-width" id="gunnel-stern-width" ng-model="boat.gunnel.stern.width"></td>
+					</tr>
+				</table>				
+			</div>
+			<div class="clearfix"></div>
+		</div>
+
+		<!-- Super Structure -->
+		<div class="calculator-section super-structure">
+
+			<div class="calculator-section-left">
+				<img src="img/super-structure-section.png">
+			</div>
+
+			<div class="calculator-section-right">
+				<h3>Super Structure</h3>
+
+				<table>
+					<tr>
+						<th></th>
+						<th>Port</th>
+						<th>Starboard</th>
+					</tr>
+					<tr>
+						<td><label>Length</label></td>
+						<td><input required autocomplete="off" type="number" name="superstructure-port-length" id="superstructure-port-length" ng-model="boat.superstructure.port.length"></td>
+						<td><input required autocomplete="off" type="number" name="superstructure-starboard-length" id="superstructure-starboard-length" ng-model="boat.superstructure.starboard.length"></td>
+					</tr>
+					<tr>
+						<td><label>Width</label></td>
+						<td><input required autocomplete="off" type="number" name="superstructure-port-width" id="superstructure-port-width" ng-model="boat.superstructure.port.width"></td>
+						<td><input required autocomplete="off" type="number" name="superstructure-starboard-width" id="superstructure-starboard-width" ng-model="boat.superstructure.starboard.width"></td>
+					</tr>
+				</table>
+				
+				<table>
+					<tr>
+						<th></th>
+						<th>Front</th>
+						<th>Rear</th>
+					</tr>
+					<tr>
+						<td><label>Height</label></td>
+						<td><input required autocomplete="off" type="number" name="superstructure-front-height" id="superstructure-front-height" ng-model="boat.superstructure.front.height"></td>
+						<td><input required autocomplete="off" type="number" name="superstructure-rear-height" id="superstructure-rear-height" ng-model="boat.superstructure.rear.height"></td>
+					</tr>
+					<tr>
+						<td><label>Width</label></td>
+						<td><input required autocomplete="off" type="number" name="superstructure-front-width" id="superstructure-front-width" ng-model="boat.superstructure.front.width"></td>
+						<td><input required autocomplete="off" type="number" name="superstructure-rear-width" id="superstructure-rear-width" ng-model="boat.superstructure.rear.width"></td>
+					</tr>
+				</table>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+
+		<!-- Free Board -->
+		<div class="calculator-section free-board">
+
+			<div class="calculator-section-left">
+				<img src="img/free-board-section.png">
+			</div>
+
+			<div class="calculator-section-right">
+				<h3>Free Board</h3>
+				
+				<table>
+					<tr>
+						<th></th>
+						<th>Topside</th>
+						<th></th>					
+					</tr>
+					<tr>
+						<td><label>Length</label></td>
+						<td><input required autocomplete="off" type="number" name="freeboard-topside-length" id="freeboard-topside-length" ng-model="boat.freeboard.topside.length"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><label>Width</label></td>
+						<td><input required autocomplete="off" type="number" name="freeboard-topside-width" id="freeboard-topside-width" ng-model="boat.freeboard.topside.width"></td>
+						<td></td>
+					</tr>
+				</table>
+				
+				<table>
+					<tr>
+						<th></th>
+						<th>Transom</th>
+						<th></th>
+					</tr>
+					<tr>
+						<td><label>Height</label></td>
+						<td><input required autocomplete="off" type="number" name="freeboard-transom-height" id="freeboard-transom-height" ng-model="boat.freeboard.transom.height"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><label>Width</label></td>
+						<td><input required autocomplete="off" type="number" name="freeboard-transom-width" id="freeboard-transom-width" ng-model="boat.freeboard.transom.width"></td>
+						<td></td>
+					</tr>
+				</table>				
+			</div>
+			<div class="clearfix"></div>
+		</div>
+
+		<!-- Bottom -->
+		<div class="calculator-section bottom">
+
+			<div class="calculator-section-left">
+				<img src="img/bottom-section.png">
+			</div>
+
+			<div class="calculator-section-right">
+				<h3>Bottom</h3>
+				
+				<table>
+					<tr>
+						<th></th>
+						<th>Bottom</th>
+						<th></th>		
+					</tr>
+					<tr>
+						<td><label>Length</label></td>
+						<td><input required autocomplete="off" type="number" name="bottom-bottom-length" id="bottom-bottom-length" ng-model="boat.bottom.bottom.length"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><label>Width</label></td>
+						<td><input required autocomplete="off" type="number" name="bottom-bottom-width" id="bottom-bottom-width" ng-model="boat.bottom.bottom.width"></td>
+						<td></td>
+					</tr>
+				</table>
+				
+				<table>
+					<tr>
+						<th></th>
+						<th>Transom</th>
+						<th></th>						
+					</tr>
+					<tr>
+						<td><label>Height</label></td>
+						<td><input required autocomplete="off" type="number" name="bottom-transom-height" id="bottom-transom-height" ng-model="boat.bottom.transom.height"></td>
+					</tr>
+					<tr>
+						<td><label>Width</label></td>
+						<td><input required autocomplete="off" type="number" name="bottom-transom-width" id="bottom-transom-width" ng-model="boat.bottom.transom.width"></td>
+					</tr>
+				</table>				
+			</div>
+			<div class="clearfix"></div>
+		</div>
+
+		<!-- Other -->
+		<div class="calculator-section other">
+
+			<div class="calculator-section-left">
+				<img src="img/bottom-section.png">
+			</div>
+
+			<div class="calculator-section-right">
+				<h3>Other</h3>
+				
+				<table>
+					<tr>
+						<th></th>
+						<th>Other (1)</th>
+						<th>Other (2)</th>
+					</tr>
+					<tr>
+						<td><label>Length</label></td>
+						<td><input required autocomplete="off" type="number" name="other-other1-length" id="other-other1-length" ng-model="boat.other.other1.length"></td>
+						<td><input required autocomplete="off" type="number" name="other-other2-length" id="other-other2-length" ng-model="boat.other.other2.length"></td>
+					</tr>
+					<tr>
+						<td><label>Width</label></td>
+						<td><input required autocomplete="off" type="number" name="other-other1-width" id="other-other1-width" ng-model="boat.other.other1.width"></td>
+						<td><input required autocomplete="off" type="number" name="other-other2-width" id="other-other2-width" ng-model="boat.other.other2.width"></td>
+					</tr>
+				</table>
+				
+				<table>
+					<tr>
+						<th></th>
+						<th>Other (3)</th>
+						<th></th>
+					</tr>
+					<tr>
+						<td><label>Length</label></td>
+						<td><input required autocomplete="off" type="number" name="other-other3-length" id="other-other3-length" ng-model="boat.other.other3.length"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><label>Width</label></td>
+						<td><input required autocomplete="off" type="number" name="other-other3-width" id="other-other3-width" ng-model="boat.other.other3.width"></td>
+						<td></td>
+					</tr>
+				</table>				
+			</div>
+			<div class="clearfix"></div>
+		</div>
+
+	</div>	<!-- /calculator-form -->
+
+	<div class="row calculator-submit">
+		<input type="submit" value="Calculate" class="blue-background">
+	</div>
+
+	</form>
+</div>

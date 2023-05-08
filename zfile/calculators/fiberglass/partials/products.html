@@ -1,0 +1,248 @@
+<div class="calculator-results">
+    <div class="calculator-results--total">
+        <h2>Total Sq. Ft.</h2>
+        <span>{{ results.total | number:2}}</span>
+
+        <div class="calculator-results--items">
+            <div class="desktop-preview">
+                <table>
+                    <tr>
+                        <th width="10%"></th>
+                        <th width="45%"></th>
+                        <th width="5%"></th>
+                        <th width="10%">Quantity<br />Required</th>
+                        <th width="15%">No. of Bottles<br />You Need</th>
+                        <th width="15%"></th>
+                    </tr>
+                    <tbody>
+                        <!-- BOAT CLEAN PLUS -->
+                        <tr width="100%">
+                            <td width="10%">
+                                <a class="product-image" href="{{ products.bcp.link }}" target="_blank" title="{{ products.bcp.title }}">
+                                    <img ng-src="{{ products.bcp.image }}" alt="{{ products.bcp.name }}" width="90" height="75" />
+                                </a>
+                            </td>
+                            <td width="45%">
+                                <h3><a href="{{ products.bcp.link }}"  target="_blank" title="{{ products.bcp.title }}">{{ products.bcp.name }}</a></h3>
+                                <p><i class="product-subtitle">Multipurpose Cleaner</i><br />Coverage: sq. ft./bottle<br /><i class="blue fNormal">A)</i> 16oz bottle<br /><i class="blue fNormal">B)</i> Gallon <i class="qTip oQModal" data-open-modal="#gallons-modal">?</i></p>
+                            </td>
+                            <td width="5%">
+                                <p>{{ products.bcp.h.coverage }}</p>
+                            </td>
+                            <td width="10%">
+                                <p class="bcp-raw fixed-field">
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <i class="bottle">{{products.bcp.h.raw}}</i>
+                                    <i class="gallon">{{products.bcp.g.raw}}</i>
+                                </p>
+                            </td>
+                            <td width="15%">
+                                <p class="bcp-total blue fixed-field">
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <i class="bottle">{{products.bcp.h.quantity}}</i>
+                                    <i class="gallon">{{products.bcp.g.quantity}}</i>
+                                </p>
+                            </td>
+                            <td width="15%">
+                                <a ng-click="addProduct(products.bcp.h, $event)" class="buy-now buy-boat-clean-plus double-link-middle" data-pontoon-product="bcp" href="https://www.auroramarine.com/store/boat-clean-plus.html" target="_blank" title="Buy Now Boat Clean Plus"></a>
+                                <a ng-click="addProduct(products.bcp.g, $event)" class="buy-now buy-boat-clean-plus-gal double-link-bottom" data-pontoon-product="bcpG" href="https://www.auroramarine.com/store/boat-clean-plus.html" target="_blank" title="Buy Now Boat Clean Plus Gallon"></a>
+                            </td>
+                        </tr>
+                        <!-- /BOAT CLEAN PLUS -->
+
+                        <!-- Boat Scrub -->
+                        <tr width="100%">
+                            <td width="10%">
+                                <a class="product-image" href="{{ products.bs.link }}" target="_blank" title="{{ products.bs.title }}">
+                                    <img src="{{ products.bs.image }}" alt ="{{ products.bs.name }}" width="90" height="75" />
+                                </a>
+                            </td>
+                            <td width="45%">
+                                <h3><a href="{{ products.bs.link }}" target="_blank" title="{{ products.bs.link }}">{{ products.bs.name }}</a></h3>
+                                <p><i class="product-subtitle">Fiberglass Cleaner and restorer</i><br />Coverage: sq. ft./bottle<br /><i class="blue fNormal">A)</i> 16oz bottle<br /><i class="blue fNormal">B)</i> Gallon <i class="qTip oQModal" data-open-modal="#gallons-modal">?</i></p>
+                            </td>
+                            <td width="5%">
+                                <p class="mTopm20">{{ products.bs.h.coverage }}</p>
+                            </td>
+                            <td width="10%">
+                                <p class="bs-raw fixed-field">
+                                    <br /><br /> <br />
+                                    <i class="regular">{{products.bs.h.raw}}</i>
+                                    <i class="gallon">{{products.bs.g.raw}}</i>
+                                </p>
+                            </td>
+                            <td width="15%">
+                                <p class="bs-total blue fixed-field">
+                                    <br /><br /> <br />
+                                    <i class="regular">{{products.bs.h.quantity}}</i>
+                                    <i class="gallon">{{products.bs.g.quantity}}</i>
+                                </p>
+                            </td>
+                            <td width="15%">
+                                <a ng-click="addProduct(products.bs.h, $event)" class="buy-now buy-boat-scrub double-link-middle" data-pontoon-product="boatscrub" href="https://www.auroramarine.com/store/boat-scrub.html" target="_blank" title="Buy Now Boat Scrub"></a>
+                                <a ng-click="addProduct(products.bs.g, $event)" class="buy-now buy-boat-scrub-gal double-link-bottom" data-pontoon-product="boatscrubG" href="https://www.auroramarine.com/store/boat-scrub.html" target="_blank" title="Buy Now Boat Scrub Gallon"></a>
+                            </td>
+                        </tr>
+                        <!-- /Boat Scrub -->
+
+
+                        <!-- Marine Power Mitt - STILL HAVE TO EDIT -->
+                        <tr width="100%">
+                            <td width="10%">
+                                <a class="product-image" href="{{ products.mpm.link }}" target="_blank" title="{{ products.mpm.title }}">
+                                    <img src="{{ products.mpm.image }}" alt ="Linear buffer" width="90" height="75" />
+                                </a>
+                            </td>
+                            <td width="45%">
+                                <h3><a href="{{ products.mpm.link }}" target="_blank" title="{{products.mpm.name}}">{{products.mpm.name}}</a></h3>
+                                <p><i class="product-subtitle">{{ products.mpm.title }}</i><br />Qty.<br /></p>
+                            </td>
+                            <td width="5%"><p></p></td>
+                            <td width="10%">
+                                <p class="fixed-field"><br /><br />{{ products.mpm.h.quantity }}</p>
+                            </td>
+                            <td width="15%"><p class="fixed-field"></p></td>
+                            <td width="15%">
+                                <a ng-click="addProduct(products.mpm.h, $event)" class="buy-now" data-pontoon-product="linear_buffer" href="https://www.auroramarine.com/store/checkout/cart/add/?product=58&qty=1" target="_blank" title="Buy Now Linear Buffer"></a>
+                            </td>
+                        </tr>
+                        <!-- /Marine Power Mitt -->
+
+
+                        <!-- Ez Buff -->
+                        <tr width="100%">
+                            <td width="10%">
+                                <a class="product-image" href="{{ products.ezb.link }}" target="_blank" title="{{ products.ezb.title }}">
+                                    <img src="{{ products.ezb.image }}" alt ="{{ products.ezb.name }}" width="90" height="75" />
+                                </a>
+                            </td>
+                            <td width="45%">
+                                <h3><a href="{{ products.ezb.link }}" target="_blank" title="{{ products.ezb.link }}">{{ products.ezb.name }}</a></h3>
+                                <p><i class="product-subtitle">{{ products.ezb.title }}</i><br />Coverage: sq. ft./bottle<br /><i class="blue fNormal">A)</i> 16oz bottle<br /><i class="blue fNormal">B)</i> Gallon <i class="qTip oQModal" data-open-modal="#gallons-modal">?</i></p>
+                            </td>
+                            <td width="5%">
+                                <p class="mTopm20">{{ products.ezb.h.coverage }}</p>
+                            </td>
+                            <td width="10%">
+                                <p class="bs-raw fixed-field">
+                                    <br /><br /> <br />
+                                    <i class="regular">{{products.ezb.h.raw}}</i>
+                                    <i class="gallon">{{products.ezb.g.raw}}</i>
+                                </p>
+                            </td>
+                            <td width="15%">
+                                <p class="bs-total blue fixed-field">
+                                    <br /><br /> <br />
+                                    <i class="regular">{{products.ezb.h.quantity}}</i>
+                                    <i class="gallon">{{products.ezb.g.quantity}}</i>
+                                </p>
+                            </td>
+                            <td width="15%">
+                                <a ng-click="addProduct(products.ezb.h, $event)" class="buy-now buy-boat-scrub double-link-middle" data-pontoon-product="boatscrub" href="https://www.auroramarine.com/store/boat-scrub.html" target="_blank"></a>
+                                <a ng-click="addProduct(products.ezb.g, $event)" class="buy-now buy-boat-scrub-gal double-link-bottom" data-pontoon-product="boatscrubG" href="https://www.auroramarine.com/store/boat-scrub.html" target="_blank"></a>
+                            </td>
+                        </tr>
+                        <!-- /Ez Buff -->
+
+                        <!-- Ez Buff Extender -->
+                        <tr>
+                            <td width="10%">
+                                <a class="product-image" href="{{ products.ezbe.link }}" target="_blank" title="{{ products.ezbe.title }}">
+                                    <img src="{{ products.ezbe.image }}" alt ="{{ products.ezbe.name }}" width="90" height="75" />
+                                </a>
+                            </td>
+                            <td width="45%">
+                                <h3><a href="{{ products.ezbe.link }}" target="_blank" title="{{ products.ezbe.link }}">{{ products.ezbe.name }}</a></h3>
+                                <p><i class="product-subtitle">{{ products.ezbe.title }}</i><br />Coverage: sq. ft./bottle<br /><i class="blue fNormal">A)</i> 16oz bottle</p>
+                            </td>
+                            <td width="5%">
+                                <p class="mTopm20">{{ products.ezbe.h.coverage }}</p>
+                            </td>
+                            <td width="10%">
+                                <p class="bs-raw fixed-field">
+                                    <br /><br /> <br />
+                                    <i class="regular">{{products.ezbe.h.raw}}</i>
+                                </p>
+                            </td>
+                            <td width="15%">
+                                <p class="bs-total blue fixed-field">
+                                    <br /><br /> <br />
+                                    <i class="regular">{{products.ezbe.h.quantity}}</i>
+                                </p>
+                            </td>
+                            <td width="15%">
+                                <a ng-click="addProduct(products.ezbe.h, $event)" class="buy-now buy-boat-scrub double-link-bottom" data-pontoon-product="boatscrub" href="https://www.auroramarine.com/store/boat-scrub.html" target="_blank"></a>
+                            </td>
+                        </tr>
+                        <!-- /Ez Buff Extender -->
+
+                        <!-- Premium Boat Shine -->
+                        <tr width="100%">
+                            <td width="10%">
+                                <a class="product-image" href="{{ products.pbs.link }}" target="_blank" title="{{ products.pbs.title }}">
+                                    <img src="{{ products.pbs.image }}" alt ="{{ products.pbs.name }}" width="90" height="75" />
+                                </a>
+                            </td>
+                            <td width="45%">
+                                <h3><a href="{{ products.pbs.link }}" target="_blank" title="{{ products.ezbe.link }}">{{ products.pbs.name }}</a></h3>
+                                <p><i class="product-subtitle">{{ products.pbs.title }}</i><br />Coverage: sq. ft./bottle<br /><i class="blue fNormal">A)</i> 16oz bottle<br /><i class="blue fNormal">B)</i> Gallon <i class="qTip oQModal" data-open-modal="#gallons-modal">?</i></p>
+                            </td>
+                            <td width="5%">
+                                <p class="mTopm20">{{ products.pbs.h.coverage }}</p>
+                            </td>
+                            <td width="10%">
+                                <p class="bs-raw fixed-field">
+                                    <br /><br /><br />
+                                    <i class="regular">{{products.pbs.h.raw}}</i>
+                                    <i class="gallon">{{products.pbs.g.raw}}</i>
+                                </p>
+                            </td>
+                            <td width="15%">
+                                <p class="bs-total blue fixed-field">
+                                    <br /><br /><br />
+                                    <i class="regular">{{products.pbs.h.quantity}}</i>
+                                    <i class="gallon">{{products.pbs.g.quantity}}</i>
+                                </p>
+                            </td>
+                            <td width="15%">
+                                <a ng-click="addProduct(products.pbs.h, $event)" class="buy-now buy-boat-scrub double-link-middle" data-pontoon-product="boatscrub" href="https://www.auroramarine.com/store/boat-scrub.html" target="_blank"></a>
+                                <a ng-click="addProduct(products.pbs.g, $event)" class="buy-now buy-boat-scrub-gal double-link-bottom" data-pontoon-product="boatscrubG" href="https://www.auroramarine.com/store/boat-scrub.html" target="_blank"></a>
+                            </td>
+                        </tr>
+                        <!-- Premium Boat Shine -->
+                    </tbody>
+                </table>
+                <a href="#" ng-click="calculateTotalCost($event)" class="calculate-cost"></a>
+            </div>
+        </div>
+    </div>
+    <div class="calculator-results--products"></div>
+
+    <a ui-sref="index" class="close-calculator">X</a>
+    <div class="product-videos row">
+        <!--<h2 class="product-videos-title">How to Videos</h2>-->
+        <ul>
+            <li>
+                <img src="img/henry-dirty-boat.jpg" width="100%" height="202px" alt="Dirty Boat - Before Ez Buff" />
+                <span class="video-caption">Before Image</span>
+            </li>
+            <li>
+                <img src="img/henry-shiny-boat.jpg" width="100%" alt="Shiny Boat - After Ez Buff" />
+                <span class="video-caption">After Image</span>
+            </li>
+        </ul>
+    </div>
+    <p class="calc-note">
+        <strong>NOTE:</strong><br />
+        This form is for estimating only. These values are based on fiberglass boat in average condition.
+        If your fiberglass boat have been poorly maintained or are in rough condition, you may need more products.
+
+        <br /><br />
+
+        If you require more than 5 bottles, we recommend you purchase gallon instead as it's more economical.
+    </p>
+</div>

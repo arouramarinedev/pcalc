@@ -1,0 +1,18 @@
+##### country redirect
+
+RewriteEngine on
+
+# Canada
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^CA$
+RewriteRule ^(.*)$ https://www.auroramarine.com/calculators/pontoons/pontoons.php [L]
+
+# USA
+#RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^US$
+#RewriteRule ^(.*)$ https://www.auroramarine.com/calculator/pontoons/pontoons.php [L]
+
+# Australia
+RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^AU$
+RewriteRule ^(.*)$ https://www.auroramarine.com.au/calculator/pontoons/pontoons.php [L]
+
+
+#####

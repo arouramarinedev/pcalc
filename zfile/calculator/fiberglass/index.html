@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en" ng-app="calculator">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <!-- Google Meta -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+
+    <meta name="author" content="Aurora Marine" />
+    <meta name="copyright" content="Aurora Marine" />
+    <meta name="application-name" content="" />
+
+    <!-- Facebook meta -->
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:image" content="https://www.auroramarine.com/images/LOGO.jpg" />
+
+    <!-- Twitter meta -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:description" content="" />
+    <meta name="twitter:image" content="https://www.auroramarine.com/images/LOGO.jpg" />
+
+    <title>Aurora Marine</title>
+
+    <!-- Responsive meta -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans|Montserrat' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/calculator.css" type="text/css"/>
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-11740439-2', 'auto');
+        ga('send', 'pageview');
+    </script>
+</head>
+<body>
+
+    <div ui-view></div>
+
+    <div class="qTipModal" id="gallons-modal">
+        <h3>Why to buy in gallons?</h3>
+        <ul>
+            <li>Buying in gallons saves 25%</li>
+            <li>One gallon is equivalent to 8 bottles</li>
+            <li>This product has a minimum shelf life of 3 years</li>
+        </ul>
+        <div class="close-button">X</div>
+        <div class="arrow-down"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="js/fiberglass.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.29/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+    <script src="https://code.angularjs.org/1.2.29/angular-route.min.js"></script>
+    <script src="https://code.angularjs.org/1.2.29/angular-sanitize.min.js"></script>
+    <script src="app.js"></script>
+    <script src="CalcCtrl.js"></script>
+    <script src="CalcModel.js"></script>
+</body>
+</html>
